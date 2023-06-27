@@ -42,7 +42,7 @@ public class LoginController {
 				 application.GlobalVariables.getInstance().setUsuario(usuario);
 	             application.GlobalVariables.getInstance().setPass(pass);	               
 				
-				this.navigateToTopics();
+				this.navigator();
 			}
 			
 			
@@ -61,7 +61,7 @@ public class LoginController {
 	
 	
 	@FXML
-	private void navigateToTopics() {
+	private void navigator() {
 	    try {
 	    	
 	    	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Topics.fxml"));
@@ -90,9 +90,7 @@ public class LoginController {
 	    	e.printStackTrace();
 			System.out.println("Errors: " + e.getMessage());		
 	    }
-	}
-
-	
+	}	
 	
 	
 }
