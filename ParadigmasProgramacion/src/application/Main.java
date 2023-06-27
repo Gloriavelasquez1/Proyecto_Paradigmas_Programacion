@@ -21,7 +21,7 @@ public class Main extends Application {
 			
 			//Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/ParadigmasProgramacion/Login.fxml"));
 			
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("/Views/Login.fxml"));
 			AnchorPane root = loader.load();
 			
 			//AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("/ParadigmasProgramacion/Login.fxml"));
@@ -30,6 +30,7 @@ public class Main extends Application {
 			primaryStage.setTitle("Ahorcadito");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 			System.out.println("Errors: " + e.getMessage());						
