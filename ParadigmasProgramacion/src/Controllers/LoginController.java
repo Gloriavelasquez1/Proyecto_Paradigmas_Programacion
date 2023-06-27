@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import application.Main;
 import javafx.event.ActionEvent;
 
@@ -15,16 +16,44 @@ public class LoginController {
 	private TextField txtUser;
 	@FXML
 	private TextField txtPass;
+	
 
 	// Event Listener on Button.onAction
 	@FXML
-	public void btnClick(ActionEvent event) {		
+	public void btnClick(ActionEvent event) {	
+
+		try {
+			
+			String usuario = txtUser.getText();
+            String pass = txtPass.getText();
+			
+			usuario = txtUser.getText();
+			pass = txtPass.getText();
+			
+			if ((usuario == "") || (pass == "")) {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setHeaderText(null);
+		        alert.setTitle("Acceso Denegado");
+		        alert.setContentText("Debe llenar todos los campos");
+		        alert.showAndWait();
+			}
+			else {
+				
+				 application.GlobalVariables.getInstance().setUsuario(usuario);
+	             application.GlobalVariables.getInstance().setPass(pass);	               
+				
+				this.navigateToTopics();
+			}
+			
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Errors: " + e.getMessage());	
+		}
 		
-		Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setTitle("Acceso Denegado");
-        alert.setContentText("Por se una guguito sopenca");
-        alert.showAndWait();
+		
+		
 		
 		
 	}
@@ -32,35 +61,30 @@ public class LoginController {
 	
 	
 	@FXML
-	private void navigateToDashboard(ActionEvent event) {
+	private void navigateToTopics() {
 	    try {
 	    	
-	    	/*FXMLLoader loader = new FXMLLoader(Main.class.getResource("/Views/Topics.fxml"));
-			AnchorPane root = loader.load();
-			
-			//AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("/ParadigmasProgramacion/Login.fxml"));
-			
-			Scene scene = new Scene(root,400,400);
-			primaryStage.setTitle("Ahorcadito");
-			primaryStage.setScene(scene);
-			primaryStage.show();*/
-	    	
-	    	
-	    	
-	        FXMLLoader loader = new FXMLLoader(getClass().getResource("Topics.fxml"));
-	        Parent topics = loader.load();
+	    	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Topics.fxml"));
+	         Parent topics = loader.load();
 
-	        // Obtén el controlador de la nueva vista
-	        TopicsController topicsController = loader.getController();
-
-	        // Configura cualquier dato necesario en el controlador de la nueva vista
-	        // dashboardController.setSomeData(someData);
-
+	         // Obtén el controlador de la nueva vista
+	         TopicsController topicsController = loader.getController();
+	        
 	        // Obtén la escena actual
-	        //Scene currentScene = ((Node) event.getSource()).getScene();
+	         Scene currentScene = txtUser.getScene();
 
-	        // Reemplaza la escena actual con la nueva vista
-	        //currentScene.setRoot(dashboard);
+	         // Crea una nueva escena con la vista cargada
+	         Scene topicsScene = new Scene(topics);
+	         
+	         // Obtén el Stage (ventana) actual
+	         Stage currentStage = (Stage) currentScene.getWindow();
+
+	         // Establece la nueva escena en el Stage
+	         currentStage.setScene(topicsScene);
+	         currentStage.setTitle("Topics"); // Opcional: Cambia el título de la ventana
+
+	         // Muestra la nueva escena
+	         currentStage.show();
 	        
 	    } catch (Exception e) {
 	    	e.printStackTrace();
