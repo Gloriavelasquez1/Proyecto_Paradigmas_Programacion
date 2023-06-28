@@ -22,7 +22,7 @@ public class TopicsController {
 			
 			try {				
 				String topics = "Paises";
-				application.GlobalVariables.getInstance().setUsuario(topics);	
+				application.GlobalVariables.getInstance().setTopic(topics);		
 				navigator();
 			}
 			catch(Exception e) {
@@ -38,7 +38,7 @@ public class TopicsController {
 
 			try {								
 				String topics = "Deportes";
-				application.GlobalVariables.getInstance().setUsuario(topics);
+				application.GlobalVariables.getInstance().setTopic(topics);	
 				navigator();
 			}
 			catch(Exception e) {
@@ -61,7 +61,7 @@ public class TopicsController {
 		         Parent topics = loader.load();
 
 		         // Obtén el controlador de la nueva vista
-		         TopicsController topicsController = loader.getController();
+		         GameController gameController = loader.getController();
 		                 
 		        // Obtén la escena actual
 		         Scene currentScene = lblInicio.getScene();

@@ -89,16 +89,16 @@ private static GlobalVariables instance;
     public String[] getRepoPalabrasPaises() {
     	String[] words = new String[10];        
       
-        words[0] = "Colombia";
-        words[1] = "Belgica";
-        words[2] = "Francia";
-        words[3] = "Italia";
-        words[4] = "Alemania";
-        words[5] = "Mexico";
-        words[6] = "EEUU";
-        words[7] = "Yakuks";
-        words[8] = "Nauru";
-        words[9] = "Japon";
+        words[0] = "colombia";
+        words[1] = "belgica";
+        words[2] = "francia";
+        words[3] = "italia";
+        words[4] = "alemania";
+        words[5] = "mexico";
+        words[6] = "brasil";
+        words[7] = "yakuks";
+        words[8] = "nauru";
+        words[9] = "japon";
         
         return words;
     }
@@ -107,16 +107,16 @@ private static GlobalVariables instance;
     public String[] getRepoPalabrasDeportes() {
     	String[] words = new String[10];        
       
-        words[0] = "Futbol";
-        words[1] = "Boxeo";
-        words[2] = "Atletismo";
-        words[3] = "Baseball";
-        words[4] = "Tejo";
-        words[5] = "Padel";
-        words[6] = "Zorbing";
-        words[7] = "Kabaddi";
-        words[8] = "Natacion";
-        words[9] = "Judo";
+        words[0] = "futbol";
+        words[1] = "boxeo";
+        words[2] = "atletismo";
+        words[3] = "baseball";
+        words[4] = "tejo";
+        words[5] = "padel";
+        words[6] = "zorbing";
+        words[7] = "kabaddi";
+        words[8] = "natacion";
+        words[9] = "judo";
         
         return words;
     }
