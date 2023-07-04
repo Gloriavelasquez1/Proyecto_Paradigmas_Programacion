@@ -95,7 +95,7 @@ private static GlobalVariables instance;
         words[3] = "italia";
         words[4] = "alemania";
         words[5] = "mexico";
-        words[6] = "brasil";
+        words[6] = "brazil";
         words[7] = "yakuks";
         words[8] = "nauru";
         words[9] = "japon";

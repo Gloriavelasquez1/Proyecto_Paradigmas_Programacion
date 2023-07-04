@@ -170,7 +170,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="txtLetra" layoutX="305.0" layoutY="512.0" prefHeight="52.0" prefWidth="101.0">
+      <TextField fx:id="txtLetra" layoutX="305.0" layoutY="512.0" onKeyTyped="#enviarTexto" prefHeight="52.0" prefWidth="101.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -180,7 +180,7 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Button layoutX="422.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnEnviar" text="Enviar">
+      <Button layoutX="422.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnReiniciar" text="Reiniciar">
          <font>
             <Font size="22.0" />
          </font>

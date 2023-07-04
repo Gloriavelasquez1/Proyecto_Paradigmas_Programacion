@@ -20,7 +20,8 @@ public class GameController {
     private int cantErrores;
     private int cantAciertos;
     private int indPalabra = 0;
-	
+    
+    
 	@FXML
 	 public void initialize() {							
 	        
@@ -47,16 +48,58 @@ public class GameController {
 	        txtLetra.setTextFormatter(textFormatter);
 	}
 	
+	
+	@FXML
+	private void enviarTexto() {		
+		
+		enviar();
+		
+	}	
+	
+	
 	private void iniciarJuego() {
 		
 
-		try {
+		try {			
+				 
+				 cantErrores = 0;
+				 cantAciertos = 0;
+				 
+				 if (indPalabra == 9) {
+					 indPalabra = 0;
+				 }
+				 else {
+					 indPalabra = indPalabra + 1;
+				 }		 
+				 
+								
+				chr1.setText("");
+				chr2.setText("");
+				chr3.setText("");
+				chr4.setText("");
+				chr5.setText("");
+				chr6.setText("");
+				chr7.setText("");
+				chr8.setText("");
+				chr9.setText("");
+				chr10.setText("");
+
+				imgGanaste.setVisible(false);
+				imgCabeza.setVisible(false);
+				imgCuerpo.setVisible(false);
+				imgBrazoIzq.setVisible(false);
+				imgBrazoDer.setVisible(false);
+				imgPieIzq.setVisible(false);
+				imgPieDer.setVisible(false);
+				imgOjoIzq.setVisible(false);
+				imgOjoDer.setVisible(false);
+				imgBoca.setVisible(false);
+				imgPerdiste.setVisible(false);
+			
 			
 			///////////////////////////////////////////////////////////////////
 			//Definir juegos de palabras
-			topic = application.GlobalVariables.getInstance().getTopic();
-			
-			cantAciertos = 0;
+			topic = application.GlobalVariables.getInstance().getTopic();			
 			
 			if (topic == "Paises") {
 				palabras = application.GlobalVariables.getInstance().getRepoPalabrasPaises();
@@ -88,7 +131,7 @@ public class GameController {
 			
 	}
 	
-	
+
 	
 	private void mostrarChars(String palabra) {
 		
@@ -100,24 +143,58 @@ public class GameController {
 			
 			if (cantidadChars >= 1) {
 				undr1.setVisible(true);
+				
+				undr2.setVisible(false);
+				undr3.setVisible(false);
+				undr4.setVisible(false);
+				undr5.setVisible(false);
+				undr6.setVisible(false);
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 2) {
 				undr1.setVisible(true);
-				undr2.setVisible(true);
+				undr2.setVisible(true);				
+				
+				undr3.setVisible(false);
+				undr4.setVisible(false);
+				undr5.setVisible(false);
+				undr6.setVisible(false);
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 3) {
 				undr1.setVisible(true);
 				undr2.setVisible(true);
 				undr3.setVisible(true);
+								
+				undr4.setVisible(false);
+				undr5.setVisible(false);
+				undr6.setVisible(false);
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 4) {
 				undr1.setVisible(true);
 				undr2.setVisible(true);
 				undr3.setVisible(true);
-				undr4.setVisible(true);
+				undr4.setVisible(true);				
+				
+				undr5.setVisible(false);
+				undr6.setVisible(false);
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 5) {
@@ -125,7 +202,13 @@ public class GameController {
 				undr2.setVisible(true);
 				undr3.setVisible(true);
 				undr4.setVisible(true);
-				undr5.setVisible(true);
+				undr5.setVisible(true);				
+				
+				undr6.setVisible(false);
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 6) {
@@ -134,7 +217,12 @@ public class GameController {
 				undr3.setVisible(true);
 				undr4.setVisible(true);
 				undr5.setVisible(true);
-				undr6.setVisible(true);
+				undr6.setVisible(true);				
+				
+				undr7.setVisible(false);
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 7) {
@@ -145,6 +233,10 @@ public class GameController {
 				undr5.setVisible(true);
 				undr6.setVisible(true);
 				undr7.setVisible(true);
+							
+				undr8.setVisible(false);
+				undr9.setVisible(false);
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 8) {
@@ -155,7 +247,11 @@ public class GameController {
 				undr5.setVisible(true);
 				undr6.setVisible(true);
 				undr7.setVisible(true);
-				undr8.setVisible(true);
+				undr8.setVisible(true);				
+				
+				undr9.setVisible(false);
+				undr10.setVisible(false);
+				
 			}
 			
 			if (cantidadChars == 9) {
@@ -167,7 +263,9 @@ public class GameController {
 				undr6.setVisible(true);
 				undr7.setVisible(true);
 				undr8.setVisible(true);
-				undr9.setVisible(true);
+				undr9.setVisible(true);				
+				
+				undr10.setVisible(false);
 			}
 			
 			if (cantidadChars == 10) {
@@ -204,12 +302,24 @@ public class GameController {
 	
 	
 	@FXML
-	public void btnEnviar(ActionEvent event) {				
+	public void btnReiniciar(ActionEvent event) {				
+		
+		limitarTexto();
+        
+		iniciarJuego();			
+		
+		
+	}
+	
+	
+	private void enviar() {
 		
 		try {			
 			
 			String letra = txtLetra.getText();				
-			validarCharacter(palabras[indPalabra],letra);			
+			validarCharacter(palabras[indPalabra],letra);	
+			
+			txtLetra.selectAll();
 						
 		}
 		catch(Exception e) {
@@ -292,43 +402,42 @@ public class GameController {
 				
 			if(letraError) {
 				
-				int cantidadErrores = application.GlobalVariables.getInstance().getCantErrores();
-				cantidadErrores++;
-				application.GlobalVariables.getInstance().setCantErrores(cantidadErrores);
+				cantErrores++;
+				application.GlobalVariables.getInstance().setCantErrores(cantErrores);
 				
-				if (cantidadErrores == 1) {
+				if (cantErrores == 1) {
 					imgCabeza.setVisible(true);
 				}
 				
-				if (cantidadErrores == 2) {
+				if (cantErrores == 2) {
 					imgCuerpo.setVisible(true);
 				}
 				
-				if (cantidadErrores == 3) {
+				if (cantErrores == 3) {
 					imgBrazoIzq.setVisible(true);
 				}
 				
-				if (cantidadErrores == 4) {
+				if (cantErrores == 4) {
 					imgBrazoDer.setVisible(true);
 				}
 				
-				if (cantidadErrores == 5) {
+				if (cantErrores == 5) {
 					imgPieIzq.setVisible(true);
 				}
 				
-				if (cantidadErrores == 6) {
+				if (cantErrores == 6) {
 					imgPieDer.setVisible(true);
 				}
 				
-				if (cantidadErrores == 7) {
+				if (cantErrores == 7) {
 					imgOjoIzq.setVisible(true);
 				}
 				
-				if (cantidadErrores == 8) {
+				if (cantErrores == 8) {
 					imgOjoDer.setVisible(true);
 				}
 				
-				if (cantidadErrores == 9) {
+				if (cantErrores == 9) {
 					imgBoca.setVisible(true);
 					imgPerdiste.setVisible(true);
 				}
@@ -347,6 +456,9 @@ public class GameController {
 	}	
 	
 	
+
+	
+	
 	
 	
 	@FXML
@@ -362,12 +474,7 @@ public class GameController {
 		
 	}	
 	
-	private void cargarPalabras() {
-		
-		
-		
-	}
-			
+				
 	
 	
 	@FXML
